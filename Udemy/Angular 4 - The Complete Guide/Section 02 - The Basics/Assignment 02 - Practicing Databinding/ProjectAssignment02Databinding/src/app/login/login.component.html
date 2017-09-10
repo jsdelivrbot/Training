@@ -1,0 +1,12 @@
+<!-- <p>
+  login works!
+</p> -->
+<!-- <div class="row"> -->
+  <label for="username">Username:</label><br>
+  <input
+    type="text"
+    [(ngModel)]="username"
+    (input)=isEmpty($event)><br>
+  {{ username }} <br>
+  <button class="btn btn-primary" (click)="onClickResetInput()" [disabled]="isEmptyVar">Reset Input</button>
+<!-- </div> -->
