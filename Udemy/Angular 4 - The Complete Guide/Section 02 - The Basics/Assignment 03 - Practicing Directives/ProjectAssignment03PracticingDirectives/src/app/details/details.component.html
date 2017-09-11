@@ -7,11 +7,12 @@
   class="btn btn-primary"
   (click)="toggleShowDetails()">Click to Toggle Details</button>
 <br><br>
+<!-- <p *ngif="showDetails">Test Test</p> -->
 <p *ngIf="showDetails === false; else show"></p>
 <ng-template #show>This is Cool, Useful Information</ng-template>
 <br><br>
 <!-- <p *ngFor="let index of countArray"></p> -->
 <p>Count is: {{ count }}</p>
 <!-- <p>{{ countArray[0] }}</p> -->
-<p *ngFor="let index of countArray" [ngClass]="{blue: index > 4}">Array Index is:{{ index }}</p>
+<p *ngFor="let ind of countArray" [ngClass]="{blue: index > 4}">Array Index is:{{ ind }}</p>
 <!-- <ng-template #blue></ng-template> -->
