@@ -1,0 +1,135 @@
+/* ----------------------------------------------- */
+/* BASIC SETUP
+/* ----------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(85, 85, 85, 1);
+    font-family: 'Lato','Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/* ----------------------------------------------- */
+/* REUSABLE COMPONENTS
+/* ----------------------------------------------- */
+
+.row {
+    max-width: 1140px;
+    /* top and bottom, left and right auto */
+    margin: 0 auto;
+}
+
+/* ----------------------------------------------- */
+/* NAV BAR
+/* ----------------------------------------------- */ 
+
+.omniLogo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin: 20px 0 0 0;
+}
+
+.mainNav {
+    float: right;
+    list-style: none;
+    margin: 55px 0 0 0;
+}
+
+.mainNav li {
+    display: inline-block;
+    /* can be side by side */
+    margin: 0 0 0 40px;
+}
+
+.mainNav li a:link, .mainNav li a:visited {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .9rem;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    padding: 8px 0;
+}
+
+.mainNav li a:hover, .mainNav li a:active {
+    color: rgba(230, 126, 34, 1.0);
+    border-bottom: 2px solid rgba(230, 126, 34, 1.0);
+}
+
+/* ----------------------------------------------- */
+/* HEADER
+/* ----------------------------------------------- */ 
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.heroTextBox {
+    /* want to be absolutey positioned box */
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* color:  white; */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    color: rgba(255, 255, 255, 1)
+}
+
+.btn:link, .btn:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    /* border: 1px solid white; */
+    color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    /* css3 */
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+
+.btnFull:link, .btnFull:visited {
+    background-color: rgba(230, 126, 34,1.0);
+    border: 1px solid rgba(230, 126, 34, 1.0);
+    margin: 0 15px 0 0 ;
+}
+
+.btnGhost:link, .btnGhost:visited {
+    border: 1px solid rgba(230, 126, 34,1.0);
+    color: rgba(230, 126, 34,1.0);
+}
+
+.btn:hover, .btn:active {
+    background-color: #cf6d17;
+}
+
+.btnFull:hover, .btnFull:active {
+    border: 1px solid #cf6d17;
+}
+
+.btnGhost:hover, .btnGhost:active {
+    border: 1px solid #cf6d17;
+    color: rgba(255, 255, 255, 1);
+}
+
