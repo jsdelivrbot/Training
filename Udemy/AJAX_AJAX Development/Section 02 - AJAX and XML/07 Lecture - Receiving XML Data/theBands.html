@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>The Bands</title>
+    <script language="javascript" type="text/javascript">
+        var xmlhttp;
+        
+        function getBands()
+        {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = loadData;
+            // true is async
+            xmlhttp.open("GET", "bands.php", true);
+            xmlhttp.send();
+        }
+        
+        function loadData()
+        {
+            if(xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var bandXML = xmlhttp.responseXML.documentElement.getElementsByTagName("bands");
+                // console.log(bandXML);
+                var output = "<table>";
+                for(let i = 0; i < bandXML.length; i += 1){
+                    // console.log("Node " + bandXML[i]["childNodes"][0]["textContent"]);
+                    var line = "<tr>";
+                    var bandElement = bandXML[i].getElementsByTagName("band");
+                    console.log(bandElement);
+                    var bandName = bandElement[0].firstChild.nodeValue;
+                    var songElement = bandXML[i].getElementsByTagName("song");
+                    var songName = songElement[0].firstChild.nodeValue;
+                    console.log(bandName);
+                    console.log(songName);
+                    // put in html
+                    line += "<td>" + bandName + "</td><td>" + songName + "</td>";
+                    line += "</tr>";
+                    output += line;
+                }
+                output += "</table>";
+                console.log(output);
+                document.getElementById("result").innerHTML = output;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+    <input type="button" value="Get Bands!" onclick="getBands()"/>
+</body>
+</html>

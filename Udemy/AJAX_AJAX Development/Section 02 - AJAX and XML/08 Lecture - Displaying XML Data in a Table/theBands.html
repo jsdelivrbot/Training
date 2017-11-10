@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>The Bands</title>
+    <script language="javascript" type="text/javascript">
+        var xmlhttp;
+        
+        function getBands()
+        {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = loadData;
+            // true is async
+            xmlhttp.open("GET", "bands.php", true);
+            xmlhttp.send();
+        }
+        
+        function loadData()
+        {
+            if(xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var bandXML = xmlhttp.responseXML.documentElement.getElementsByTagName("bands");
+                console.log(bandXML);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+    <input type="button" value="Get Bands!" onclick="getBands()"/>
+</body>
+</html>

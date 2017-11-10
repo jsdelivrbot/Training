@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+
+<head>
+    <title>Airports</title>
+    <script language="javascript" type="text/javascript">
+        var xmlhttp;
+        var airportXML;
+
+        function getAirports() {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = loadData;
+            xmlhttp.open("GET", "./php/airports.php", true);
+            xmlhttp.send();
+        }
+
+        function loadData() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                airportXML = xmlhttp.responseXML.documentElement.getElementsByTagName("airport");
+                // console.log(airportXML);
+                displayData();
+            }
+        }
+
+        function addToList() {
+            // going to need the city, airportName and airportCode
+            // Get User Entered Values
+            // city
+            var city = document.getElementById("city").value;
+            // airport Name
+            var airportName = document.getElementById("airportName").value;
+            // airport Code
+            var code = document.getElementById("code").value;
+            
+            // get full xml object
+            var fullXML = xmlhttp.responseXML;
+            // console.log(fullXML);
+            
+            // NEW ELEMENT
+            var newElement = fullXML.createElement("airport");
+            var cityElement = fullXML.createElement("city");
+            var airportNameElement = fullXML.createElement("airportName");
+            var codeElement = fullXML.createElement("code");
+            
+            // create text nodes and add user values
+            var cityText = document.createTextNode(city);
+            var airportNameText = document.createTextNode(airportName);
+            var codeText = document.createTextNode(code);
+            
+            // Assemble the Element
+            cityElement.appendChild(cityText);
+            airportNameElement.appendChild(airportNameText);
+            codeElement.appendChild(codeText);
+            
+            // Assemble the airport element
+            newElement.appendChild(cityElement);
+            newElement.appendChild(airportNameElement);
+            newElement.appendChild(codeElement);
+            console.log(newElement);
+            
+            //add element to document
+            var y = fullXML.getElementsByTagName("airport");
+            y = y.length;
+            console.log(y);
+            airportXML[y-1].appendChild(newElement);
+            // console.log(airportXML);
+            displayData();
+        }
+
+        function displayData() {
+            var output = "<table>";
+            output += "<tr><th>City</th><th>Airport Name</th><th>Code</th></tr>";
+            for (i = 0; i < airportXML.length; i++) {
+
+                var line = "<tr>";
+                var cityElement = airportXML[i].getElementsByTagName("city");
+                var cityName = cityElement[0].firstChild.nodeValue;
+                var airportNameElement = airportXML[i].getElementsByTagName("airportName");
+                var airportNameName = airportNameElement[0].firstChild.nodeValue;
+                var codeElement = airportXML[i].getElementsByTagName("code");
+                var codeName = codeElement[0].firstChild.nodeValue;
+                line += "<td>" + cityName + "</td><td>" + airportNameName + "</td>";
+                line += "<td>" + codeName + "</td>";
+                line += "</tr>";
+                output += line;
+            }
+            output += "<tr>";
+            output += "<td><input type='text' id='city'/></td>";
+            output += "<td><input type='text' id='airportName'/></td>";
+            output += "<td><input type='text' id='code'/></td>";
+            output += "</tr>";
+            output += "</table>";
+            document.getElementById("result").innerHTML = output;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="result"></div>
+    <input type="button" value="Show Airport List" onclick="getAirports()" />
+    <input type="button" value="Add To List" onclick="addToList()" />
+</body>
+
+</html>
