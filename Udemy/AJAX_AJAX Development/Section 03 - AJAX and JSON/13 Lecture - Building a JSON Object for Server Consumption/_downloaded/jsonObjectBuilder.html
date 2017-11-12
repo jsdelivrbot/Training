@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>JSON Object Builder</title>
+    <script language="javascript" type="text/javascript">
+        
+        var xmlhttp;
+        
+    function createObject()
+    {
+        var song = document.getElementById("song").value;
+        var artist = document.getElementById("artist").value;
+        var year = document.getElementById("year").value;
+        var rating = document.getElementById("rating").value;
+    
+        var jsonSong = '{';
+        jsonSong += '"song":' + '"' + song + '"';
+        jsonSong += ',';
+        jsonSong += '"artist":' + '"' + artist + '"';
+        jsonSong += ',';
+        jsonSong += '"year":' + '"' +  year + '"';
+        jsonSong += ',';
+        jsonSong += '"rating":' + '"' + rating + '"';
+        jsonSong += "}";
+        
+        //console.log(jsonSong);
+        
+        sendJson(jsonSong);
+        
+    }
+    
+    function sendJson(json)
+    {
+        xmlhttp = XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange = receiveResponse;
+        
+        xmlhttp.open("GET" ,("receivesJSON.php?json=" + json) ,true );
+        xmlhttp.send();
+    }
+    
+    function receiveResponse()
+    {
+        if(xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+           
+            document.getElementById("response").innerHTML = xmlhttp.responseText;
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+        <td>Song</td><td><input type="text" id="song"/></td>
+        </tr>
+        <tr>
+        <td>Artist</td><td><input type="text" id="artist"/></td>
+        </tr>
+        <tr>
+        <td>Year</td><td><input type="text" id="year"/></td>
+        </tr>
+        <tr>
+        <td>Rating</td><td><input type="text" id="rating"/></td>
+        </tr>
+    </table>
+        <input type="button" value="Create Object" onclick="createObject()" />
+        <div id="response"></div>
+</body>
+</html>
