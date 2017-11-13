@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+    <html>
+        <head>
+            <link rel="stylesheet" href="./css/style.css"/>
+        </head>
+        <body>
+            <h1>Catalog of Products</h1>
+            <table cellspacing="1" cellpadding="10">
+                <tr style="background-color: #cccccc">
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Quantity in Stock</th>
+                </tr>
+                <xsl:for-each select="catalog/product">
+                    <!-- <xsl:sort select="name" /> -->
+                    <!-- <xsl:sort select="price" /> -->
+                    <xsl:sort select="quantity" />
+                    
+                    <!-- quantity less than 100 -->
+                    <!-- <xsl:if test="quantity &lt; 100"> -->
+                    <xsl:choose>
+                    <xsl:when test="quantity &lt; 100">
+                        <tr class="below">
+                            <td><xsl:value-of select="name"/></td>
+                            <td><xsl:value-of select="price"/></td>
+                            <td><xsl:value-of select="quantity"/></td>
+                        </tr>
+		            </xsl:when>
+                    <!-- </xsl:if> -->
+                    <xsl:otherwise>
+                        <tr class="above">
+                            <td><xsl:value-of select="name"/></td>
+                            <td><xsl:value-of select="price"/></td>
+                            <td><xsl:value-of select="quantity"/></td>
+                        </tr>
+                    </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+            </table>
+        </body>
+    </html>
+</xsl:template>    
+</xsl:stylesheet>

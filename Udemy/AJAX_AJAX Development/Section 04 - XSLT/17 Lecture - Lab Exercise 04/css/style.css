@@ -1,0 +1,14 @@
+.tableHead {
+    background-color: rgba(185, 185, 185, 1);
+    color: rgba(0, 0, 0, 1);
+}
+
+.above {
+    background-color: rgba(0, 115, 0, 1);
+    color: white;
+}
+
+.below {
+    background-color: rgba(65, 65, 65, 1);
+    color: white;
+}

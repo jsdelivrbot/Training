@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/"> 
+    <html>
+        <head>
+            <link rel="stylesheet" href="../css/style.css"/>
+        </head>
+        <body>
+            <h1>Songs</h1>
+            <table cellspacing="1" cellpadding="10">
+                <thead>
+                    <tr class="tableHead">
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <xsl:for-each select="catalog/song">
+                    <xsl:sort select="artist"/>
+                    <xsl:choose>
+                        <xsl:when test="rating &lt; 7">
+                            <tr class="below">
+                                <td><xsl:value-of select="title"/></td>
+                                <td><xsl:value-of select="artist"/></td>
+                                <td><xsl:value-of select="rating"/></td>
+                            </tr>
+                        </xsl:when>
+                        
+                        <xsl:otherwise>
+                            <tr class="above">
+                                <td><xsl:value-of select="title"/></td>
+                                <td><xsl:value-of select="artist"/></td>
+                                <td><xsl:value-of select="rating"/></td>
+                            </tr>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                        <!-- <tr>
+                            <td><xsl:value-of select="title"/></td>
+                            <td><xsl:value-of select="artist"/></td>
+                            <td><xsl:value-of select="rating"/></td>
+                        </tr> -->
+                    </xsl:for-each>
+                </tbody>
+            </table>
+        </body>
+    </html>
+</xsl:template>
+</xsl:stylesheet>

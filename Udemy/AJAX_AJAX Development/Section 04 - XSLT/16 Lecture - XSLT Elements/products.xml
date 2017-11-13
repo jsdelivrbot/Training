@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="products_style.xml"?>
+<catalog>
+    <product>
+        <name>Widgets</name>
+        <price>$19.99</price>
+        <quantity>25</quantity>
+    </product>
+    <product>
+        <name>Gidgets</name>
+        <price>$5.95</price>
+        <quantity>155</quantity>
+    </product>
+    <product>
+        <name>Fermits</name>
+        <price>$9.98</price>
+        <quantity>87</quantity>
+    </product>
+    <product>
+        <name>Foghats</name>
+        <price>$7.99</price>
+        <quantity>12</quantity>
+    </product>
+    <product>
+        <name>Varmints</name>
+        <price>$3.99</price>
+        <quantity>112</quantity>
+    </product>
+    <product>
+        <name>Cogos</name>
+        <price>$92.75</price>
+        <quantity>45</quantity>
+    </product>
+    <product>
+        <name>Sprockets</name>
+        <price>$26.50</price>
+        <quantity>308</quantity>
+    </product>
+</catalog>

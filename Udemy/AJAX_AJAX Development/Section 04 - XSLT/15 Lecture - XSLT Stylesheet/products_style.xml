@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+    <html>
+        <body>
+            <h1>Catalog of Products</h1>
+            <table cellspacing="1" cellpadding="10">
+                <thead>
+                    <tr style="background-color: #cccccc">
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Quantity in Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <xsl:for-each select="catalog/product">
+                        <tr style="background-color: #dedede">
+                            <td><xsl:value-of select="name"/></td>
+                            <td><xsl:value-of select="price"/></td>
+                            <td><xsl:value-of select="quantity"/></td>
+                        </tr>
+                </xsl:for-each>
+                </tbody>
+            </table>
+        </body>
+    </html>
+</xsl:template>
+
+</xsl:stylesheet>

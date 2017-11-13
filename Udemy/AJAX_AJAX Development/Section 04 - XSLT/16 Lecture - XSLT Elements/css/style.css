@@ -1,0 +1,9 @@
+.below {
+    background-color: rgb(155, 0, 0, 1);
+    color: white;
+}
+
+.above {
+    background-color: rgba(0, 155, 0, 1);
+    color: white;
+}
