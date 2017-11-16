@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>JSON with Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+                $("#process").click(function(){
+                    $.getJSON("./php/json.php",
+                        function(json){
+                            var output = "First Name: " + json.firstName;
+                            output += "<br/>Last Name: " + json.lastName;
+                            output += "<br/>Company: " + json.company;
+                            output += "<br/>Age: " + json.age;
+                            $("#result").html(output);
+                        }
+                    )
+                })
+            }    
+        );
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+    <input type="button" id="process" value="get JSON Data"/>
+</body>
+</html>

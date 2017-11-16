@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lab Exercise 05</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+                $("#buttonSubmit").click(function(){
+                    var value = document.getElementById("inputNumber").value;
+                    // console.log(value);
+                    // var contactURL = `./php/factors.php?number=${value}`;
+                    // console.log(contactURL);
+                    $.ajax(
+                        {
+                            type: "GET",
+                            // beforeSend: function(xhr) {
+                            //     xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
+                            //     },
+                            crossDomain: true,
+                            contentType: 'application/x-www-form-urlencoded',
+                            // contentType: "application/json",
+                            url:  "./php/factors.php?number="+value,
+                            // url:  "./php/factors.php",
+                            // data: {
+                                // number: value
+                            // },
+                            // dataType:"json",
+                            success:
+                                function(result)
+                                {
+                                    console.log(result);
+                                    $("#response").html(result);
+                                },
+                            error:
+                                function(theError)
+                                {
+                                    $("#response").html(theError.statusText);
+                                }
+                        }
+                    )
+                })
+                
+            }    
+        );
+    </script>
+</head>
+
+<body>
+    <input id="inputNumber" type="text" placeholder="Enter Number">
+    <input id="buttonSubmit" type="button" value="Submit Number">
+    <div id="response">
+        
+    </div>
+</body>
+
+</html>
