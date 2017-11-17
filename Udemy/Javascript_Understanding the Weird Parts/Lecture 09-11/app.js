@@ -12,7 +12,7 @@
 
 //hoisting
 
-
+console.log(this);
 
 // var a = 'Hello World';
 
@@ -36,16 +36,16 @@
 
 // var a;
 // undefined
-var a = 'hello world';
-// a is defined
-console.log(a);
+// var a = 'hello world';
+// // a is defined
+// console.log(a);
 
-// a = undefined;
-// DONT DO THIS
+// // a = undefined;
+// // DONT DO THIS
 
-if ( a === undefined) {
-    console.log('a is undefined');
-}
-else{
-    console.log('a is defined');
-}
+// if ( a === undefined) {
+//     console.log('a is undefined');
+// }
+// else{
+//     console.log('a is defined');
+// }
