@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>PHP XML</title>
+    <script language="javascript" type="text/javascript">
+        var xmlhttp;
+        
+        function lookUp()
+        {
+            xmlhttp = new XMLHttpRequest();
+            
+            xmlhttp.onreadystatechange = displayData;
+            
+            url= "./php/phpXml.php?";
+            url+= "flightNumber="
+            url+= document.getElementById('flightNumber').value;
+            console.log(url);
+            xmlhttp.open("get", url, true);
+            xmlhttp.send();
+            
+        }
+        
+        function displayData()
+        {
+            if(xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            //console.log(xmlhttp.responseXml);
+            var orig = xmlhttp.responseXML.getElementsByTagName("orig")[0].childNodes[0].nodeValue;
+            var destination = xmlhttp.responseXML.getElementsByTagName("destination")[0].childNodes[0].nodeValue;
+            var departTime = xmlhttp.responseXML.getElementsByTagName("departTime")[0].childNodes[0].nodeValue;
+            var arrivalTime = xmlhttp.responseXML.getElementsByTagName("arrivalTime")[0].childNodes[0].nodeValue;
+
+            document.getElementById("orig").innerHTML = orig;
+            document.getElementById("destination").innerHTML = destination;
+            document.getElementById("departTime").innerHTML = departTime;
+            document.getElementById("arrivalTime").innerHTML = arrivalTime;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="flightInfo" style="border: 1px solid black; width: 400px">
+        Origination: <span id="orig"></span><br/>
+        Destination: <span id="destination"></span><br/>
+        Departure Time: <span id="departTime"></span><br/>
+        Arrival Time: <span id="arrivalTime"></span><br/>
+    </div>
+    Flight Number<input type="text" id="flightNumber"/>
+    <input type="button" value="Look Up Flight" onclick="lookUp()" />
+</body>
+</html>
