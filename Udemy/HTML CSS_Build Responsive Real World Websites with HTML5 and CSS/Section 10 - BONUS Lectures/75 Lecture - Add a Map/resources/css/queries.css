@@ -1,0 +1,175 @@
+/* big tablet to 1200px (widths smaller than the 1140px row) */
+@media only screen and (max-width: 1200px){
+    .heroTextBox {
+        width: 100%;
+        padding: 0 2%;
+    }
+    .row { padding: 0 2%; }
+}
+
+/* Small tablets to big tablet: from 768 to 1023 (ipad 768 port) */
+@media only screen and (max-width: 1023px){
+    body { font-size: 18px; }
+    section { padding: 60px 0;}
+    .longCopy { 
+        width: 80%;
+        margin-left: 10%;
+    }
+    .stepsBox { margin-top: 10px; }
+    .stepsBox:last-child { margin-top: 10px; }
+    .worksStep { margin-bottom: 40px; }
+    .worksStep:last-of-type { margin-bottom: 60px; }
+    .appScreen { width: 45%; }
+    
+    
+    .sectionCities h3 { font-size: .9rem; }
+    .iconSmall { 
+        width: 20px;
+        margin-right: 5px;
+    }
+    /* .cityFeature { font-size: .75rem; } */
+    .box p {
+        font-size: .7rem;
+    }
+    
+    .cityFeature a:link { font-size: .7rem; }
+    
+    .planBox { 
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .planPrice { font-size: 1.5rem; }
+    .planPrice span { font-size: .75rem; }
+    
+    .contactForm { width: 90%; }
+}
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px){
+    /* if any screen is from 0 to 767 - smaller than ipad*/
+    body { font-size: 16px; }
+    section { padding: 30px 0;}
+    .row, .heroTextBox {
+        padding: 0 4%;
+    }
+    .col { 
+        width: 100%;
+        margin: 0 0 4% 0;
+    }
+    .mainNav { display: none; }
+    .mobileNavIcon { display: inline-block; }
+    .mainNav { 
+        float: left;
+        margin: 20px 20px 0 0;
+    }
+    .mainNav li { display: block; }
+    
+    .mainNav li a:link,
+    .mainNav li a:visited {
+        display: block;
+        border: 0;
+        padding: 3px 0;
+        font-size: .9rem;
+    }
+    
+    
+    .fixedNav .mainNav {
+        margin-top: 5px;
+    }
+    
+    .fixedNav .mainNav li a:link, .fixedNav .mainNav li a:visited {
+        padding: 10px 0;
+    }
+    
+    .fixedNav .mainNav li a:active {
+        color: rgba(230, 126, 34, 1.0);
+    }
+    
+    .fixedNav .mobileNavIcon {
+        margin-top: 5px;
+    }
+    
+    .fixedNav .mobileNavIcon i {
+        color: rgba(85, 85, 85, 1);
+    }
+
+    
+    .box, .box:first-child, .longCopy { 
+        width: 90%;
+        margin-left: 5%;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    .appScreen { 
+        width: 35%;
+    }
+    .stepsBox:first-of-type {
+        /* margin: 0 auto 0 auto; */
+        text-align: center;
+        padding-right: 0;
+    }
+    .stepsBox:last-child {
+        padding-left: 0;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 40px;
+    }
+    .worksStep {
+        margin-bottom: 50px;
+    }
+    .buttonApp img {
+        height: 50px;
+    }
+    .box img {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .cityFeature, .sectionCities h3 {
+        margin-left: 5%;
+    }
+    /* .sectionPlans .span-1-of-3 {
+        margin-left: 0;
+    } */
+    .planBox {
+        margin: 0;
+        width: 60%;
+        margin-left: 20%;
+    }
+    .contactForm { width: 90%; }
+    /* footer .col {
+        width: 50%;
+    } */
+     footer .footerNav, footer .socialIcons {
+        font-size: .75rem;
+        text-align: center;
+        float: none;
+    }
+    
+    .mapBox {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .map {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        z-index: 0;
+    }
+    
+    .formBox {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 30px 0;
+    }
+    
+    
+}
+@media only screen and (max-width: 480px){
+    /* if any screen is from 0 to 480 px */
+    section { padding: 30px 0;}
+    .contactForm { width: 100%; }
+}
