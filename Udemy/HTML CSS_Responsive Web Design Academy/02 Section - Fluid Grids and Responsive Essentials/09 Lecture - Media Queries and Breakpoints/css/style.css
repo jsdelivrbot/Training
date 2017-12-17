@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.box {
+    width: 100%;
+    margin: 1%;
+    padding: 10% 0;
+    background-color: red;
+    border: 1px solid black;
+}

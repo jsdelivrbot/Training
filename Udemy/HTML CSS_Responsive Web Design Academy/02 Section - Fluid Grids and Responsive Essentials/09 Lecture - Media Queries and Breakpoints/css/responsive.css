@@ -1,0 +1,24 @@
+
+/* =================================================== */
+
+
+/* =================================================== */
+@media screen and (min-width: 800px){
+    body {
+        width: 80%;
+    }
+    
+    .box {
+        width: 31.2%;
+        margin: 1%;
+        padding: 10% 0;
+        background-color: blue;
+        float: left;
+    }
+}
+/* =================================================== */
+@media screen and (min-width: 1200px){
+    body {
+        background-color: purple;
+    }
+}

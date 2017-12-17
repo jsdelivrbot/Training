@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.box {
+    width: 31.2%;
+    margin: 1%;
+    padding: 10% 0;
+    background-color: red;
+    float: left;
+    border: 1px solid black;
+}

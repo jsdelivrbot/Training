@@ -1,0 +1,11 @@
+body {
+    width: 80%;
+}
+
+.box {
+    width: 31.2%;
+    margin: 1%;
+    padding: 10% 0;
+    background-color: blue;
+    float: left;
+}
