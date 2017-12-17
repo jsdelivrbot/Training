@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Designer Clothing.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./css/responsiveGrid.css">
+    <link rel="stylesheet" type="text/css" href="./css/slimmenu.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="section group">
+            <div class="col span_6_of_12">
+                <p id="logo">
+                    DESIGNER <br/> CLOTHING <span class="highlighted">.COM</span>
+                </p>
+            </div>
+            <div class="col span_6_of_12">
+                <ul>
+                    <li><a href="#">MY ACCOUNT<i class="fa fa-home"></i></a></li>
+                    <li><a href="#">MY BASKET<i class="fa fa-tag"></i></a></li>
+                    <li><a href="#">CHECKOUT<i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- end of nav -->
+        <div class="section group">
+            <div class="col span_6_of_12"></div>
+            <div class="col span_6_of_12">
+                <form>
+                    <input id="search" type="search" placeholder="Search...">
+                    <input id="clickBtn" type="button" value="GO">
+                </form>
+            </div>
+        </div>
+        <!-- end of search -->
+    </header>
+    <nav>
+        <div class="section group">
+            <div class="col span_12_of_12">
+                <ul id="navigation" class="slimmenu">
+                    <li>
+                        <a href="#">FOR HIM<i class="fa fa-mars"></i></a>
+                        <ul class="sub-nav">
+                            <li><a href="#">CLOTHING</a></li>
+                            <li><a href="#">SHOES</a></li>
+                            <li><a href="#">ACCESSORIES</a></li>
+                            <li><a href="#"><span class="saleText">SALE</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">FOR HER<i class="fa fa-venus"></i></a>
+                        <ul class="sub-nav">
+                            <li><a href="#">CLOTHING</a></li>
+                            <li><a href="#">SHOES</a></li>
+                            <li><a href="#">ACCESSORIES</a></li>
+                            <li><a href="#"><span class="saleText">SALE</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">NEW COLLECTIONS</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="saleText">SALE</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end of nav -->
+    </nav>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script src="./js/jquery.slimmenu.min.js"></script>
+    <ul id="navigation" class="slimmenu"></ul>
+    <script>
+        $('#navigation').slimmenu(
+        {
+            resizeWidth: '800',
+            collapserTitle: 'Main Menu',
+            animSpeed: 'medium',
+            easingEffect: null,
+            indentChildren: false,
+            childrenIndenter: '&nbsp;'
+        });
+    </script>
+    
+</body>
+</html>
+
+<!-- <div class="section group">
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+    <div class="col span_1_of_12">
+        1 of 12
+    </div>
+</div> -->
