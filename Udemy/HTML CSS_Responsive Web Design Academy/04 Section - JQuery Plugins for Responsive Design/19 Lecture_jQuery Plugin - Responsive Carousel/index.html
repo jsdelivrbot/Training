@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <link rel="stylesheet" type="text/css" href="./css/flexslider.css" >
+    <link rel="stylesheet" type="text/css" href="./css/rrssb.css" >
+    
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/responsiveGrid.css">
     <link rel="stylesheet" type="text/css" href="./css/slimmenu.css">
@@ -88,7 +91,18 @@
     </div>
     <div class="section group">
         <div class="col span_12_of_12">
-            <img src="./img/shoes.jpg" alt="">
+            <!-- Place somewhere in the <body> of your page -->
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img src="./img/shoes.jpg" />
+                    </li>
+                    <li>
+                        <img src="./img/sunglasses.jpg" />
+                    </li>
+                </ul>
+            </div>
+            <!-- <img src="./img/shoes.jpg" alt=""> -->
         </div>
     </div>
     <div class="section group">
@@ -177,6 +191,16 @@
     <!-- SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script src="./js/jquery.flexslider.js"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            $('.flexslider').flexslider();
+        });
+    </script>
+    
+    <script src="./js/rrssb.min.js"></script>
     
     <script src="./js/jquery.slimmenu.min.js"></script>
     <ul id="navigation" class="slimmenu"></ul>
