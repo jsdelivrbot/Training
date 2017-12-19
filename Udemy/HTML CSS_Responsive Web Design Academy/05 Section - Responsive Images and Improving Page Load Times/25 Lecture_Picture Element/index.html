@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lecture 25 - Learning the Picture Element</title>
+    <script>
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+    </script>
+    <script src="./js/picturefill.js" async></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- combine with media query -->
+    <!-- <picture>
+        <source media="(min-width: 1280px)" 
+                srcset="./img/dog1280.jpg">
+        <source media="(min-width: 640px)" 
+                srcset="./img/dog640.jpg">
+        <img src="./img/dog.jpg" alt="A picture of a Cute Dog">
+    </picture> -->
+    
+    <!-- different orientation -->
+    
+    <!-- retina images -->
+    <!-- <picture>
+        <source media="(min-width: 1280px)" 
+                srcset="./img/dog-large.jpg, 
+                        ./img/1.5xdog-large.jpg, 
+                        ./img/2xdog-large.jpg">
+        <source media="(min-width: 640px)" 
+                srcset="./img/dog-med.jpg, 
+                        ./img/1.5xdog-med.jpg, 
+                        ./img/2xdog-med.jpg">
+        <img src="./img/dog-small.jpg, 
+                    ./img/1.5xdog-small.jpg, 
+                    ./img/2xdog-small.jpg" 
+            alt="A picture of a Cute Dog">
+    </picture> -->
+    
+    <!-- change image format -->
+    <picture>
+        <source type="./img/webp" srcset="./img/dob.webp">
+        <img src="./img/dog.jpg" alt="A photo of a cute dog">
+    </picture>
+    
+</body>
+
+</html>
