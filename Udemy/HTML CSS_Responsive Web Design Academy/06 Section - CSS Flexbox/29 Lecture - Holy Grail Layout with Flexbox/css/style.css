@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+header, article, nav, aside, footer {
+    margin: 5px;
+    border-radius: 5px;
+}
+
+header, footer {
+    background-color: red;
+}
+
+article {
+    background-color: blue;
+    min-height: 300px;
+}
+
+nav, aside {
+    background-color: green;
+    
+}
+
+nav, aside, header, footer {
+    min-height: 80px;
+}
+
+@media all and (min-width: 600px){
+    #container {
+        flex-direction: row;
+        min-height: 800px;
+    }
+    
+    article {
+        flex: 3;
+        /* order: -1; */
+    }
+    
+    nav, aside {
+        flex: 1;
+    }
+    
+    nav {
+        order: -1;
+    }
+}
