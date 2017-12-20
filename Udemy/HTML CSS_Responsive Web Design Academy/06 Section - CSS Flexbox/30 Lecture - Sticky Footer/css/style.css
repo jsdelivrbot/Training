@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header, footer {
+    height: 100px;
+}
+
+header {
+    background-color: aqua;
+}
+
+footer {
+    background-color: red;
+}
+
+#container {
+    flex: 1;
+}
