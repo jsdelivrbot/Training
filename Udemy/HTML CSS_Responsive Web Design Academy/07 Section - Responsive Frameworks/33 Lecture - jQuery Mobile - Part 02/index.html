@@ -1,0 +1,137 @@
+<html>
+<head>
+
+	<title>jQuery Mobile page</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./css/designerClothingMobile.css" />
+	<link rel="stylesheet" href="./css/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	
+	<link rel="stylesheet" href="./css/style.css" />
+	
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+	<div data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<h1>DesignerClothing <br><span class="highlighted">.com</span></h1>
+			<div data-role="navbar" data-iconpos="left">
+				<ul>
+					<li><a href="#" data-icon="home">Home</a></li>
+					<li><a href="#" data-icon="shop" class="ui-btn-active">My Basket</a></li>
+					<li><a href="#" data-icon="check">Checkout</a></li>
+				</ul>
+			</div>
+			<!-- /navbar -->
+		</div>
+		<!-- /header -->
+		<div role="main" class="ui-content">
+			<div data-role="collapsible" data-collapsed="true">
+				<h3>Main Menu</h3>
+				<ul data-role="listview">
+					<li data-role="list-divider">FOR HIM</li>
+						<li><a href="#">CLOTHING</a></li>
+						<li><a href="#">SHOES</a></li>
+						<li><a href="#">ACCESSORIES</a></li>
+					<li data-role="list-divider">FOR HER</li>
+						<li><a href="#">CLOTHING</a></li>
+						<li><a href="#">SHOES</a></li>
+						<li><a href="#">ACCESSORIES</a></li>
+					<li data-role="list-divider">NEW COLLECTIONS</li>
+						<li><a href="#">CLOTHING</a></li>
+						<li><a href="#">SHOES</a></li>
+						<li><a href="#">ACCESSORIES</a></li>
+					<li data-role="list-divider">SALE</li>
+						<li><a href="#">CLOTHING</a></li>
+						<li><a href="#">SHOES</a></li>
+						<li><a href="#">ACCESSORIES</a></li>
+				</ul>
+			</div>
+			
+			<img src="./img/shoes.jpg" alt="pic of shoes!">
+			
+			<a href="#" class="ui-btn">GET 5% OFF YOUR FIRST ORDER</a>
+			<a href="#" class="ui-btn">FREE SHIPPING ON EVERYTHING</a>
+			<a href="#" class="ui-btn">PRICE MATCH GUARANTEE</a>
+			
+			<div class="galleryImages">
+				<div class="feature">
+					<a class="gallery" href="#">
+						<img src="./img/accessories.jpg" alt="">
+						<p>ACCESSORIES</p>
+					</a>
+				</div>
+				<div class="feature">
+					<a class="gallery" href="#">
+						<img src="./img/model.jpg" alt="">
+						<p>LATEST FASHION</p>
+					</a>
+				</div>
+	
+				<div class="feature">
+					<a class="gallery" href="#">
+						<img src="./img/girl.jpg" alt="">
+						<p>GET DRESSED UP</p>
+					</a>
+				</div>    
+	
+				<div class="feature">
+					<a class="gallery" href="#">
+						<img src="./img/feet.jpg" alt="">
+						<p>FOOTWEAR</p>
+					</a>
+				</div>
+				<div class="feature">
+					<a class="gallery" href="#">
+						<img src="./img/flower.jpg" alt="">
+						<p>SET FOR SUMMER</p>
+					</a>
+				</div>  
+			</div>
+
+			<div>
+				<form>
+					<input id="email" type="email" name="email" placeholder="Join Our Email Club..." >
+					<button type="submit" class="ui-btn ui-mini">Submit Email</button>
+				</form>
+				<p>Welcome to <strong>DesignerClothing.com. </strong>We are a global fashion leader offering all of the latest styles to cater to all tastes and budgets with hundreds of items added every week.</p>
+			</div>
+			<!-- /gallery -->
+		</div>
+		<div data-role="footer">
+			<div data-role="navbar" data-iconpos="left">
+				<ul>
+					<li><a href="#" data-icon="info">About</a></li>
+					<li><a href="#" data-icon="phone" class="ui-btn-active">Contact</a></li>
+					<li><a href="#myPanel" data-icon="plus">More+</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /footer -->
+		<div data-role="panel" id="myPanel">
+			<!-- links -->
+			<ul>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Returns Info</a></li>
+				<li><a href="#">Delivery Info</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">Terms &amp; Conditions</a></li>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Cookies</a></li>
+				<li><a href="#">Our Blog</a></li>
+			</ul>
+			<ul>
+				<li>American Express<i class="fa fa-cc-amex"></i></li>
+				<li>Visa<i class="fa fa-cc-visa"></i></li>
+				<li>MasterCard<i class="fa fa-cc-mastercard"></i></li>
+				<li>PayPal<i class="fa fa-cc-paypal"></i></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.highlighted {
+    color: #c158ad;
+}
+
+img {
+    max-width: 100%;
+}
+
+.galleryImages{
+    /* max-width: 150%; */
+    /* height: auto; */
+    text-align: center;
+}
