@@ -1,0 +1,15 @@
+/* Your code goes here */
+.container {
+    /* by default, fill a row to left */
+    /* by inference, flex-direction: row; */
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: column-reverse; */
+    /* float: right; */
+    border: 1px solid white;
+    /* width: 100%; */
+}
+
+.container div {
+    float: right;
+}
