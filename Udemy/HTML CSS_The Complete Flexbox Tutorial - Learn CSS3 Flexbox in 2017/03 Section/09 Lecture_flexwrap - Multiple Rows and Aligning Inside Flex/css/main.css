@@ -1,0 +1,17 @@
+/* Your code goes here */
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    /* align-items: center; */
+    align-items: stretch;
+    /* align-items: baseline; */
+    border: 1px solid white;
+    height: 300px;
+}
+
+/* .container div:nth-child(2) {
+    font-size: 60px;
+} */
