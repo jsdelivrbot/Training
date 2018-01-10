@@ -1,0 +1,35 @@
+/* Your code goes here */
+*{
+    box-sizing: border-box;
+}
+
+.grid {
+    display: flex;
+}
+
+.gutters {
+    margin: -10px 0 10px -10px;
+}
+
+.gutters > div {
+    padding: 10px 10px 10px 10px;
+}
+
+.grid div div {
+    background-color: rgba(215, 215, 215, .8);
+    border: 1px solid rgba(215, 215, 215, .8);
+    height: 100%;
+    padding: 10px;
+}
+
+.half {
+    flex-basis: 50%;
+}
+
+.third {
+    flex-basis: 33.333333%
+}
+
+.fourth {
+    flex-basis: 25%;
+}
