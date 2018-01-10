@@ -1,0 +1,32 @@
+/* Your code goes here */
+*{
+    box-sizing: border-box;
+}
+
+.grid {
+    display: flex;
+}
+
+.gutters {
+    margin: -10px 0 10px -10px;
+}
+
+.gutters > .cell {
+    padding: 50px 30px 0 30px;
+}
+
+.cell {
+    flex: 1 1 0%;
+}
+
+.cell > div {
+    background-color: rgba(255, 255, 255, .7);
+    height: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    
+}
+
+.large {
+    flex-grow: 3;
+}
