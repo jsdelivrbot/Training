@@ -1,0 +1,32 @@
+/* Your code goes here */
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    /* flex-flow: row; */
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+    border: 1px solid white;
+    width: 800px;
+}
+
+.container div {
+    /* float: right; */
+    /* width: 150px; */
+    flex-basis: 100px;
+    flex-grow: 1;
+    margin: 0;
+    flex-shrink: 1;
+    /* padding: 0; */
+}
+
+.container div:nth-child(2) {
+    flex-shrink: 5;
+}
+
+.container div:nth-child(4) {
+
+}
