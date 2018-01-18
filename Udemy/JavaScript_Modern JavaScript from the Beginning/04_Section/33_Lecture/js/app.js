@@ -1,14 +1,9 @@
 // define UI variables
 
 const form = document.querySelector('#task-form');
-// console.log(form);
-
 const taskList = document.querySelector('.collection');
-
 const clearBtn = document.querySelector('.clear-tasks');
-
 const filter = document.querySelector('#filter');
-
 const taskInput = document.querySelector('#task');
 // console.log(taskInput);
 
@@ -52,7 +47,6 @@ function addTask(e){
     
     // clear input
     taskInput.value = '';
-    
     e.preventDefault();
 }
 
