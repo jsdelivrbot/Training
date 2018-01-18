@@ -1,10 +1,9 @@
 // define UI variables
 
 const form = document.querySelector('#task-form');
-// console.log(form);
-
+// this grabs ul class collection, the container for all li/s
 const taskList = document.querySelector('.collection');
-
+// console.log(taskList);
 const clearBtn = document.querySelector('.clear-tasks');
 
 const filter = document.querySelector('#filter');
@@ -62,34 +61,68 @@ function addTask(e){
     e.preventDefault();
 }
 
-function removeTask(e){
-    if(e.target.parentElement.classList.contains('delete-item')){
-        // console.log(e.target.parentElement.parentElement);
-        // console.log(e.target);
-        e.target.parentElement.parentElement.remove();
+// lets remove a task
+function removeTask(event){
+    console.log("clicked the remove icon");
+    console.log(`This is the param:`);
+    // event
+    console.log(event);
+    // what I am eventing? - in this case - the i tag
+    console.log(event.target);
+    // but I want the li - so lets go up - but this only gets to a tag
+    console.log(event.target.parentElement);
+    // 
+    console.log(event.target.parentElement.parentElement);
+    // so have Element.  now need to delete.  first lets check to make sure that this itme is the correct thing to delete.
+    console.log(event.target.parentElement.classList);
+    // classList = DOMTokenList
+    const doesContain = event.target.parentElement.classList.contains('delete-item');
+    // console.log();
+    // console.log(doesContain);
+    if(doesContain){
+        // get li item
+        const deleteItem = event.target.parentElement.parentElement;
+        // check item
+        console.log(deleteItem);
+        // all good, delete it!
+        deleteItem.remove();
     }
 }
-
+// this will clear everything
 function clearAllTasks(){
+    // one way to clear
     // taskList.innerHTML = '';
     
-    // faster with while
+    // faster with a while loop
+    // https://jsperf.com/innerhtml-vs-removechild
+    console.log(taskList.childNodes);
+    // ^ this gives a nodelist
+    console.log(taskList);
+    // ^ this is just a element w/ children
     while(taskList.firstChild){
-        taskList.removeChild(taskList.firstChild);
+        taskList.removeChild(taskList.firstChild)
     }
 }
-
-function filterTasks(e){
-    const text = e.target.value.toLowerCase();
-    // node list - so can use forEach
-    document.querySelectorAll('.collection-item').forEach
-    (function(task){
-        const item = task.firstChild.textContent;
-        if(item.toLowerCase().indexOf(text) != -1){
-            task.style.display = 'block';
-        } else {
-            task.style.display = 'none';
+// filter throught task event
+function filterTasks(event){
+    // get the content of the type in the input
+    // method toLowerCase() always forces lowercase
+    const typedText = event.target.value.toLowerCase();
+    // console.log(typedText);
+    // get all list items
+    // querySelectorAll returns a Node List
+    const allListItems = document.querySelectorAll('.collection-item');
+    // elements by class = HTML collection
+    allListItems.forEach(
+        function(taskItem){
+            // this will get the text info for each task item
+            const textContentItem = taskItem.firstChild.textContent;
+            if(textContentItem.toLowerCase().indexOf(typedText) != -1){
+                // if this matches then show (if it doesn't or === -1 don't show)
+                taskItem.style.display = 'block';
+            } else {
+                taskItem.style.display = 'none';
+            }
         }
-    });
-    // console.log(text);
+    )
 }
