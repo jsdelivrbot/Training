@@ -1,0 +1,49 @@
+*{
+    font-size: 10px;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif */
+}
+
+h1 {
+    font-size: 4.4rem;
+}
+
+label {
+    font-size: 1.6rem;
+}
+
+th {
+    font-size: 1.4rem;
+}
+
+.container {
+    width: 50%;
+    margin: center;
+}
+
+.success, .error, .warn {
+    color: white;
+    margin: .5rem 0 1.5rem 0;
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+.success {
+    background-color: green;
+}
+
+.warn {
+    background-color: orange;
+}
+
+.error {
+    background-color: red;
+}
+
+input {
+    font-size: 1.2rem;
+}
+
+tbody tr td {
+    font-size: 1.2rem;
+}
