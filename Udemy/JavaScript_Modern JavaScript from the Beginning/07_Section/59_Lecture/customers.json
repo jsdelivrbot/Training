@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "company": "123 Designs",
+        "phone": "111-222-3333"
+    },
+    {
+        "id": 2,
+        "name": "Steven Dos",
+        "company": "A Van Down by the River",
+        "phone": "444-555-6666"
+    },
+    {
+        "id": 3,
+        "name": "Raymond Tres",
+        "company": "Labradoodle Inc.",
+        "phone": "777-888-9999"
+    }
+]
