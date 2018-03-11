@@ -1,0 +1,46 @@
+// entry point
+
+// instantiate github
+const gitHub = new GitHub;
+
+// instantiate UI class
+const ui = new UI;
+
+// listener
+const searchUser = document.getElementById('searchUser');
+
+// search input event listener
+searchUser.addEventListener('keyup', (e) => {
+    // Get input text
+    const userText = e.target.value;
+    
+    if(userText !== ''){
+        // do something - make HTTP call to github
+        // console.log(userText);
+        // make http call
+        
+        
+        gitHub.getUser(userText)
+            .then(data => {
+                if(data.profile.message === "Not Found"){
+                    // show alert
+                    ui.showAlert('User not Found', 'alert alert-danger')
+                }
+                else{
+                    // const currentAlert = document.querySelector('.alert');
+                    // if(currentAlert){
+                    //     currentAlert.remove();
+                    // }
+                    // ui.clearProfile();
+                    // console.log(data);
+                    // show profile
+                    // data.profile is the info returned
+                    ui.showProfile(data.profile);
+                    ui.showRepos(data.repos);
+                }
+            })
+    } else {
+        // clear profile
+        ui.clearProfile();
+    }
+})
