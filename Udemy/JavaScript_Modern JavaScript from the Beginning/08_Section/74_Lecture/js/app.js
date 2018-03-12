@@ -36,7 +36,6 @@ searchUser.addEventListener('keyup', (e) => {
                     // show profile
                     // data.profile is the info returned
                     ui.showProfile(data.profile);
-                    ui.showRepos(data.repos);
                 }
             })
     } else {
