@@ -151,7 +151,7 @@ const App = (function(ItemCtrl, UICtrl){
             console.log("here");
             // getTotalCalories
             const totalCalories = ItemCtrl.getTotalCalories();
-            console.log(totalCalories);
+            // console.log(totalCalories);
             
             // tc to ui
             UICtrl.showTotalCalories(totalCalories);
@@ -175,6 +175,12 @@ const App = (function(ItemCtrl, UICtrl){
                 // Populate list with items
                 UICtrl.populateItemList(items);
             }
+            // getTotalCalories
+            const totalCalories = ItemCtrl.getTotalCalories();
+            
+            // tc to ui
+            UICtrl.showTotalCalories(totalCalories);
+            
             // load in event listeners
             loadEventListeners();
         }
