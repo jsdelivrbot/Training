@@ -8,5 +8,8 @@ request({
     }, (error, response, body) => {
     // error, response, body
     // console.log(body);
-    console.log(JSON.stringify(body, undefined, 2));
+    console.log(JSON.stringify(response.body, undefined, 2));
+    console.log(`${response.body.results[0].formatted_address}`);
+    console.log('Lat: ', `${response.body.results[0].geometry.location.lat}`);
+    console.log('Long: ',  `${response.body.results[0].geometry.location.lng}`);
 })
