@@ -1,0 +1,117 @@
+const express = require('express');
+const hbs = require('hbs');
+const fs = require('fs');
+// make app
+const app = express();
+
+
+// const getYear = new Date().getFullYear();
+
+// partials
+hbs.registerPartials(__dirname + '/views/partials')
+
+// view engine
+app.set('view engine', 'hbs');
+
+
+// middleware
+// static absolute path to the folder you want to use
+// __dirname 
+// app.use(express.static(__dirname + '/public'))
+// 
+app.use((req, res, next) => {
+    var now = new Date().toString();
+    var log = `${now}: ${req.method} ${req.url}`;
+    // console.log(`${now}: ${req.method} ${req.url}`);
+    fs.appendFile('server.log', log + '\n', (error) => {
+        if(error){
+            console.log('Unable to Append server.log');
+        }
+    })
+    next();
+})
+
+// const isMaintenance = true;
+// if(isMaintenance){
+//     // make middleware
+
+
+    // app.use((req, res, next) => {
+    //     // res.render object
+    //     res.render('maintenance.hbs', {
+    //         // no current obj info
+    //     })
+    // })
+    
+    
+// }
+// else {
+//     // setup route handlers
+//     // first is the route, second is the functino to run
+//     // second function params are req, res
+//     // route route
+//     app.get('/', (req, res) => {
+//         // response from route 
+//         // res.send('<h1>Hello Express!</h1>')
+//         // res.send({
+//         //     name: 'Seth Borne',
+//         //     likes: [ 'coding', 'coffee']
+//         // })
+//         res.render('home.hbs', {
+//             pageTitle: 'Home Page1',
+//             welcomeMessage: 'Welcome to the Home Page'
+//             // currentYear: getYear
+//         })
+//     })
+
+// }
+// you need to move this down so help doeswn't render when middleware (maintenance is run)
+app.use(express.static(__dirname + '/public'))
+// hbs helper
+hbs.registerHelper('getCurrentYear', () => {
+    return new Date().getFullYear();
+})
+
+hbs.registerHelper('screamIt', (text) => {
+    return text.toUpperCase();
+})
+
+app.get('/', (req, res) => {
+    // response from route 
+    // res.send('<h1>Hello Express!</h1>')
+    // res.send({
+    //     name: 'Seth Borne',
+    //     likes: [ 'coding', 'coffee']
+    // })
+    res.render('home.hbs', {
+        pageTitle: 'Home Page1',
+        welcomeMessage: 'Welcome to the Home Page'
+        // currentYear: getYear
+    })
+})
+
+// return html
+app.get('/about', (req, res) => {
+    // res.send('About Page')
+    // second param is the object for data
+    res.render('about.hbs', {
+        pageTitle: 'About Page1'
+        // currentYear: getYear
+    })
+})
+
+// new route
+app.get('/bad', (req, res) => {
+    res.send({
+        error: 'Error Handling Request'
+    })
+})
+
+// second param, for the clog
+app.listen(3000, () => {
+    console.log('Listening on Port 3000');
+});
+
+// new template for root
+// home.hbs
+// h1 and footer welcome message - inside p tag
