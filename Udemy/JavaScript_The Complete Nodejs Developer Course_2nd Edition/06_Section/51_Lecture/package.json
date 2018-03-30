@@ -1,0 +1,16 @@
+{
+  "name": "unit_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/*.test.js",
+    "test-watch": "nodemon --exec \"npm test\""
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^3.0.0"
+  }
+}
