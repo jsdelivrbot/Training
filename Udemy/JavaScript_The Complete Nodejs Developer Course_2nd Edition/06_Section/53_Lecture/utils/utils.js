@@ -10,24 +10,10 @@ setName = (user, fullName) => {
     user.lastName = names[1];
     return user;
 }
-asyncAdd = (a, b, callback) => {
-    setTimeout(() => {
-        // mocha fails after 2 sec.. :)
-        callback(a + b)
-    }, 1000);
-}
-// asyncSquare
-asyncSquare = (a, callback) => {
-    setTimeout(() => {
-        callback(a * a);
-    }, 1000);
-}
 module.exports = {
     // add,
     // square
     add: add,
     square: square,
-    setName: setName,
-    asyncAdd: asyncAdd,
-    asyncSquare: asyncSquare
+    setName: setName
 } 
