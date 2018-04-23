@@ -2,6 +2,10 @@
 import React from 'react';
 // reactDOm
 import ReactDOM from 'react-dom'
+// import API Key
+import getAPIKey from './api_key/api_key'
+// api key
+const API_KEY = getAPIKey();
 
 // create a new component.  this component should produce some HTML
 
