@@ -18,7 +18,7 @@ class SearchBar extends Component {
   constructor(props){
     super(props);
     // input will be the value of term
-    this.state = { term: 'Start Value' }
+    this.state = { term: '' }
   }
   // need a render method on a class based component.
   render() {
