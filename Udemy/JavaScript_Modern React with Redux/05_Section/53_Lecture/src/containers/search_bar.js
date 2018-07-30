@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
 
-export default class SearchBar extends Component {
-  constructor(props){
+class SearchBar extends Component {
+  constructor(props) {
     super(props);
-    // value of input = this.state.term
-    this.state = { term: '' }
-    // 
+    // default to empty string
+    this.state = { searchTerm: '' };
+  
+    // bind this
     this.onInputChange = this.onInputChange.bind(this);
   }
+  // change Handler
   
   onInputChange(event){
     console.log(event.target.value);
-    this.setState({ term: event.target.value })
+    this.setState( {searchTerm: event.target.value} )
   }
   
-  render(){
+  render() {
     return (
       <form className="input-group">
-        {/* change handler on input to change state over time */}
-        <input placeholder="Get a Five Day Forecast in your Favorite Cities"
+        <input 
+          placeholder="Get a five-day forecast in your favorite cities"
           className="form-control"
-          value={this.state.term}
+          value={this.state.searchTerm}
           onChange={this.onInputChange}
         />
         <span className="input-group-btn">
           <button type="submit" className="btn btn-secondary">Submit</button>
         </span>
       </form>
-    )
+    );
   }
 }
+
+export default SearchBar;
