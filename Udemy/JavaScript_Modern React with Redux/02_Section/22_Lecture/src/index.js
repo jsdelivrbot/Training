@@ -1,5 +1,5 @@
 // get React as a JS module
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // reactDOm
 import ReactDOM from 'react-dom'
 // import searchBar - needs a file path reference. Don't need .js if it is a .js file.

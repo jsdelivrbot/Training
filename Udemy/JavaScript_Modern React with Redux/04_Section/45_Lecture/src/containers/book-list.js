@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import connect from React-Redux (sep library from either react or redux)
 import { connect } from 'react-redux';
-// get action
+// get action creator 
 import { selectBook } from '../actions/index'
 // this processes thorough reducers
 import { bindActionCreators } from 'redux'
