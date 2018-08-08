@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
 
 class PostsNew extends Component {
   render(){
@@ -11,12 +10,7 @@ class PostsNew extends Component {
             Return to Index
           </Link>
         </div>
-        <form action="">
-          <Field 
-            name="title"
-            component={}
-          />
-        </form>
+        <h3>Posts New</h3>
       </div>
     );
   }
